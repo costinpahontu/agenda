@@ -1,17 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app>
-  <head>
-   <script src="lib/angular/angular.js"></script>
-    <script src="controler.js"></script>
-	<link href="css/app.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div ng-controller="Ctrl">
-      Enter name: <input type="text" ng-model="name"><br>
-       <span class="pick" ng-bind="name"></span>
-    </div>
-	
-	
-	
-  </body>
+<head>
+<title>agenda</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	 <script src="controler.js"></script>
+	 	<link href="css/app.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div ng-controller="AgendaController">
+     text:<input type="text" ng-model="newload" />
+	 test2:<input type="text" ng-model="nextload"/>
+	 
+    <button ng-click="add()">Add</button>
+    
+ <div class="pick">
+    <ul>
+        <li ng-repeat="item in list"> {{ item }} </li>
+    </ul>
+ </div>
+ 
+</div>
+
+</body>
 </html>
