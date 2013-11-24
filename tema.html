@@ -2,23 +2,43 @@
 <html ng-app>
 <head>
 <title>agenda</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	 <script src="controler.js"></script>
-	 	<link href="css/app.css" rel="stylesheet" type="text/css" />
+	  <script src="lib/angular/angular-animate.min.js"></script>
+	 <link href="css/app.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-<div ng-controller="AgendaController">
-     text:<input type="text" ng-model="newload" />
-	 test2:<input type="text" ng-model="nextload"/>
-	 
-    <button ng-click="add()">Add</button>
+<body >
+
+
+<div ng-app="" ng-controller="ContactController">
+    <form >
+    <label>First</label> 
+        <input type="text" name="name" ng-model="newload.first"/>
+    <label>Second</label> 
+        <input type="text" name="email" ng-model="newload.second"/>
     
- <div class="pick">
-    <ul>
-        <li ng-repeat="item in list"> {{ item }} </li>
-    </ul>
- </div>
+        
+        
+     <input type="button" value="Save" ng-click="saveList()" />
+    </form>
+	
+<div class="pick" >
+<ul  >
+<li ng-repeat="item in list" ng-class="{strike: deleted}" >
+    <span>{{ item.first }}</span>
+    <span>{{ item.second }}</span>
+  
+    <span  >
+        <button  href="#" ng-click="edit(item.id)">edit</button> | 
+        <button href="#" ng-click="delete(item.id)">delete</button>
+		 <input type="checkbox" ng-model="deleted"> 
+    </span>
+ </li>
+
+ </ul>
  
+  
+</div>
 </div>
 
 </body>
